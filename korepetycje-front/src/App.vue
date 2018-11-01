@@ -8,6 +8,7 @@
   </div>
 </template>
 
+
 <style lang="scss">
   @import 'assets/sass/index';
 
