@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <meta name="theme-color" content="#ffffff">
-    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" />
+    <link href=/js/map.js rel=preload as=script>
+
     <title>KorepetycjeNaJuż - Korepetycje, Lekcje</title>
   </head>
   <body>
@@ -14,7 +16,8 @@
       Do poprawnego działania aplikacja wymaga odblokowanego języka JavaScript.
       <a href="https://www.enable-javascript.com/pl/">Dowiedz się jak go włączyć.</a>
     </noscript>
-    <div id="app"></div>
+    <div id="app">
+    </div>
     <!-- built files will be auto injected -->
   </body>
 </html>
