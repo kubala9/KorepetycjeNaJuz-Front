@@ -3,7 +3,6 @@ import L from 'leaflet'
 function MapButton () {
   this.buttonControl = L.control({ position: 'topleft' })
 }
-
 MapButton.prototype = {
   initButton: function () {
     this.buttonControl.onAdd = function (map) {
