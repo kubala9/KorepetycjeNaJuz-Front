@@ -6,7 +6,7 @@
 
 <script>
 import L from 'leaflet'
-import MapButton from './map.js'
+import MapButton from '@/map.js'
 
 export default {
   name: 'containerMap',
@@ -31,6 +31,10 @@ export default {
       var mapButton = new MapButton()
       mapButton.initButton()
       mymap.addControl(mapButton.buttonControl)
+      var marker = L.marker([50.90270941638981, 15.723720788955688])
+      marker.addTo(mymap)
+      var circle = L.circle([50.90270941638981, 15.723720788955688], { radius: 100000 })
+      circle.addTo(mymap)
     }
   }
 }
