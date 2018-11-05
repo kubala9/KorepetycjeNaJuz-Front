@@ -1,13 +1,12 @@
 <template>
-   <MapContainer/>
+  <MapContainer/>
 </template>
 
 <script>
-// @ is an alias to /src
-import MapContainer from '@/components/MapComponent.vue'
+import MapContainer from '@/components/MapComponent'
 
 export default {
-  name: 'map',
+  name: 'Map',
   components: {
     MapContainer
   }

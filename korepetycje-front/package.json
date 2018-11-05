@@ -1,6 +1,6 @@
 {
   "name": "korepetycje-front",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "cross-env VUE_APP_API_URL=http://example.com vue-cli-service serve",
