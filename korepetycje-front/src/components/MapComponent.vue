@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     initMap () {
-      this.map = Leaflet.map('map').setView([50.90270941638981, 15.723720788955688], 4)
+      this.map = Leaflet.map('map').setView([52.231904, 21.006016], 4)
       Leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         zoomControl: true,
         minZoom: 6,
@@ -29,12 +29,6 @@ export default {
         maxNativeZoom: 18
       }).addTo(this.map)
       this.map.invalidateSize()
-
-      const marker = Leaflet.marker([50.90270941638981, 15.723720788955688])
-      marker.addTo(this.map)
-
-      const circle = Leaflet.circle([50.90270941638981, 15.723720788955688], { radius: 100000 })
-      circle.addTo(this.map)
 
       let location = new Location()
       location.locate(this.map)
