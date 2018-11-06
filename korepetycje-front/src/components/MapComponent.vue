@@ -34,7 +34,7 @@ export default {
       location.locate(this.map)
     },
     addLocation (e) {
-      var radius = e.accuracy / 2
+      const radius = e.accuracy / 2
 
       Leaflet.marker(e.latlng).addTo(this.map)
         .bindPopup('Jesteś w odlegości ' + radius + ' od tego punktu').openPopup()
