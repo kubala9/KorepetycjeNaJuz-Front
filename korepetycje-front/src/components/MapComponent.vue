@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     initMap () {
-      this.map = Leaflet.map('map').setView([52.231904, 21.006016], 4)
+      this.map = Leaflet.map('map').setView([52.231904, 21.006016], 12)
       Leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         zoomControl: true,
         minZoom: 6,
