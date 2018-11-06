@@ -1,16 +1,15 @@
-import Leaflet from 'leaflet'
+// import Leaflet from 'leaflet'
+import Vue from 'vue'
 
-function MapButton () {
-  this.buttonControl = Leaflet.control({ position: 'topleft' })
-}
-MapButton.prototype = {
-  initButton: function () {
-    this.buttonControl.onAdd = function (map) {
-      this._div = Leaflet.DomUtil.create('div', 'buttonControl')
-      this._div.innerHTML = '<button onclick="alert()" id="buttonAlert">Kliknij</button>'
-      return this._div
-    }
+export default class Location extends Vue {
+  constructor () {
+    super()
+    console.log('Wyszukiwanie lokalizacji')
+  }
+
+  locate (map) {
+    console.log('Szukam')
+    map.locate({ setView: true, maxZoom: 16 })
+    console.log('Znaleziono')
   }
 }
-
-export default MapButton
