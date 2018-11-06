@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "0.18.0",
+    "leaflet-gps": "^1.7.6",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vue2-leaflet": "^1.1.1",
