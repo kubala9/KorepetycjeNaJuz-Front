@@ -6,7 +6,7 @@
 
 <script>
 import Leaflet from 'leaflet'
-import Location from '@/assets/js/map.js'
+import Location from '@/assets/js/location.js'
 
 export default {
   name: 'MapComponent',
@@ -30,20 +30,15 @@ export default {
       }).addTo(this.map)
       this.map.invalidateSize()
 
-      const marker = Leaflet.marker([50.90270941638981, 15.723720788955688])
-      marker.addTo(this.map)
-
-      const circle = Leaflet.circle([50.90270941638981, 15.723720788955688], { radius: 100000 })
-      circle.addTo(this.map)
-
       let location = new Location()
       location.locate(this.map)
     },
     addLocation (e) {
-      var radius = e.accuracy / 2
+      const radius = e.accuracy
 
-      Leaflet.marker(e.latlng).addTo(this.map)
-        .bindPopup('Jesteś w odlegości ' + radius + ' od tego punktu').openPopup()
+      const marker = Leaflet.marker(e.latlng)
+      marker.addTo(this.map)
+        .bindPopup('Jesteś w odlegości ' + radius + ' metrów od tego punktu').openPopup()
 
       Leaflet.circle(e.latlng, radius).addTo(this.map)
     }
