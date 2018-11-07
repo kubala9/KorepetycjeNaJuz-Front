@@ -6,39 +6,40 @@
 
 <script>
 import Leaflet from 'leaflet'
-import MapButton from '@/assets/js/map.js'
+import Location from '@/assets/js/map.js'
 
 export default {
   name: 'MapComponent',
   data () {
     return {
-      msg: 'We can see Map :)'
+      map: undefined
     }
   },
   mounted () {
     this.initMap()
+    this.map.on('locationfound', this.addLocation)
   },
   methods: {
     initMap () {
-      const map = Leaflet.map('map').setView([50.90270941638981, 15.723720788955688], 4)
+      this.map = Leaflet.map('map').setView([52.231904, 21.006016], 12)
       Leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         zoomControl: true,
         minZoom: 6,
         maxZoom: 25,
         maxNativeZoom: 18
-      }).addTo(map)
-      map.invalidateSize()
+      }).addTo(this.map)
+      this.map.invalidateSize()
 
-      const mapButton = new MapButton()
-      mapButton.initButton()
+      let location = new Location()
+      location.locate(this.map)
+    },
+    addLocation (e) {
+      const radius = e.accuracy / 2
 
-      map.addControl(mapButton.buttonControl)
+      Leaflet.marker(e.latlng).addTo(this.map)
+        .bindPopup('Jesteś w odlegości ' + radius + ' od tego punktu').openPopup()
 
-      const marker = Leaflet.marker([50.90270941638981, 15.723720788955688])
-      marker.addTo(map)
-
-      const circle = Leaflet.circle([50.90270941638981, 15.723720788955688], { radius: 100000 })
-      circle.addTo(map)
+      Leaflet.circle(e.latlng, radius).addTo(this.map)
     }
   }
 }
