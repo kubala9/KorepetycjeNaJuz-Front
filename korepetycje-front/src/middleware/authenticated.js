@@ -1,5 +1,7 @@
-export default function ({ store, redirect }) {
-  if (!store.state.auth.details) {
-    return redirect('/logowanie')
+export default function auth ({ store, next, router }) {
+  if (!store.state.auth.token) {
+    return router.push({ name: 'logowanie' })
   }
+
+  return next()
 }
