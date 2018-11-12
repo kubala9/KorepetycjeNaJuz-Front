@@ -1,13 +1,21 @@
 <template>
-  <div class="map-container" v-cloak>
-      <l-map :zoom="zoom" :zoomControl="zoomControl" :minZoom="minZoom" :maxZoom="maxZoom"
-      :center="center" :maxNativeZoom="maxNativeZoom" ref="map">
-      <l-tile-layer :url="url"></l-tile-layer>
-        <l-marker :icon="item.icon" v-for="item in markers" :key="item.id" :lat-lng="item.latlng"
-        @l-add="$event.target.openPopup()">
-        <l-popup :content="item.content"></l-popup>
-        </l-marker>
-      </l-map>
+  <div v-cloak class="map-container">
+    <l-map
+       ref="map" :zoom="zoom" :zoomControl="zoomControl" :minZoom="minZoom" :maxZoom="maxZoom"
+       :center="center" 
+       :maxNativeZoom="maxNativeZoom"
+    >
+      <l-tile-layer :url="url" />
+      <l-marker
+        v-for="item in markers"
+        :key="item.id"
+        :icon="item.icon"
+        :lat-lng="item.latlng"
+        @l-add="$event.target.openPopup()"
+      >
+        <l-popup :content="item.content" />
+      </l-marker>
+    </l-map>
   </div>
 </template>
 

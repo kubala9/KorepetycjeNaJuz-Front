@@ -5,7 +5,7 @@
       <router-link to="/about">About</router-link>
       <router-link to="/map">Map</router-link>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -23,6 +23,7 @@
   #nav {
     padding: 30px;
     a {
+      margin: 0 5px;
       font-weight: bold;
       color: #2c3e50;
       &.router-link-exact-active {
