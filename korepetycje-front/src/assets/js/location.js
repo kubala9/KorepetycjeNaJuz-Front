@@ -8,9 +8,7 @@ export default class Location extends Vue {
   }
   locate () {
     console.log('Szukam')
-    var result = this.map.locate({ setView: true, maxZoom: 16 })
+    this.map.locate({ setView: true, maxZoom: 16 })
     console.log('Znaleziono')
-    return result
-    // this.map.on('locationfound', this.onLocationFound)
   }
 }

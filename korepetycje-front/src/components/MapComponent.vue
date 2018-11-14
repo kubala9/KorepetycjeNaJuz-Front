@@ -1,9 +1,13 @@
 <template>
   <div v-cloak class="map-container">
     <l-map
-       ref="map" :zoom="zoom" :zoomControl="zoomControl" :minZoom="minZoom" :maxZoom="maxZoom"
-       :center="center" 
-       :maxNativeZoom="maxNativeZoom"
+      ref="map"
+      :zoom="zoom"
+      :zoom-control="zoomControl"
+      :min-zoom="minZoom"
+      :max-zoom="maxZoom"
+      :center="center"
+      :max-native-zoom="maxNativeZoom"
     >
       <l-tile-layer :url="url" />
       <l-marker
@@ -11,7 +15,7 @@
         :key="item.id"
         :icon="item.icon"
         :lat-lng="item.latlng"
-        @l-add="$event.target.openPopup()"
+        @add="openPopup($event)"
       >
         <l-popup :content="item.content" />
       </l-marker>
@@ -20,6 +24,7 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import Leaflet from 'leaflet'
 import Location from '@/assets/js/location.js'
 import { LMap, LTileLayer, LPopup, LMarker } from 'vue2-leaflet'
@@ -90,6 +95,11 @@ export default {
         latlng: Leaflet.latLng(e.latlng.lat, e.latlng.lng),
         content: 'Jesteś w odlegości ' + radius + ' metrów od tego punktu',
         icon: this.defaultIcon
+      })
+    },
+    openPopup: function (event) {
+      Vue.nextTick(() => {
+        event.target.openPopup()
       })
     }
   }
