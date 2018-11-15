@@ -3,7 +3,6 @@
     <div class="home">
       <img alt="Vue logo" src="../assets/logo.png">
       <HelloWorld msg="Witaj w Projekcie Zespołowym!" />
-      Siema
     </div>
   </grid-container>
 
