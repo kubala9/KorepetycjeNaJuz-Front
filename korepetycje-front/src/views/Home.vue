@@ -1,20 +1,25 @@
 <template>
-  <grid-container>
-    <div class="home">
-      <img alt="Vue logo" src="../assets/logo.png">
-      <HelloWorld msg="Witaj w Projekcie Zespołowym!" />
-    </div>
-  </grid-container>
+  <div class="page--home">
+    <grid-container>
+      <div class="home">
+        <img alt="Vue logo" src="../assets/logo.png">
+        To jest jakiś tekst.
+        <h1>Tutaj będzie znajdować się wyszukiwarka</h1>
+      </div>
+    </grid-container>
+  </div>
 
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
+  name: 'Home'
 }
 </script>
+
+<style lang="scss" scoped>
+  .page--home {
+    background: url('/img/bg.jpg');
+  }
+</style>
