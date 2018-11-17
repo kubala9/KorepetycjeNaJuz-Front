@@ -5,6 +5,10 @@ import store from './store/index'
 
 Vue.config.productionTip = false
 
+import GridContainer from './components/GridContainer'
+
+Vue.component('GridContainer', GridContainer)
+
 new Vue({
   router,
   store,

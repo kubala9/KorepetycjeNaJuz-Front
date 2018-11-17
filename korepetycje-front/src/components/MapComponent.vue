@@ -1,5 +1,4 @@
 <template>
-  <div v-cloak class="map-container">
     <l-map
       ref="map"
       :zoom="zoom"
@@ -20,7 +19,6 @@
         <l-popup :content="item.content" />
       </l-marker>
     </l-map>
-  </div>
 </template>
 
 <script>
