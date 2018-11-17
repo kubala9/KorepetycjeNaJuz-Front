@@ -1,4 +1,5 @@
 <template>
+  <div v-cloak class="map-container">
     <l-map
       ref="map"
       :zoom="zoom"
@@ -19,6 +20,7 @@
         <l-popup :content="item.content" />
       </l-marker>
     </l-map>
+  </div>
 </template>
 
 <script>
@@ -29,6 +31,7 @@ import { LMap, LTileLayer, LPopup, LMarker } from 'vue2-leaflet'
 import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch'
 
 export default {
+  name: 'MapComponent',
   components: { LMap, LTileLayer, LPopup, LMarker },
   data () {
     return {
