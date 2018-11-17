@@ -31,7 +31,6 @@ import { LMap, LTileLayer, LPopup, LMarker } from 'vue2-leaflet'
 import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch'
 
 export default {
-  name: 'MapComponent',
   components: { LMap, LTileLayer, LPopup, LMarker },
   data () {
     return {
