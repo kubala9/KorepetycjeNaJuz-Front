@@ -23,6 +23,10 @@ export default {
       type: String,
       default: 'button'
     },
+    loading: {
+      type: Boolean,
+      default: false
+    },
     pink: {
       type: Boolean,
       default: false
