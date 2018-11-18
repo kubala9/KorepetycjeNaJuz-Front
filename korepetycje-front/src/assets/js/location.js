@@ -2,14 +2,13 @@
 import Vue from 'vue'
 
 export default class Location extends Vue {
-  constructor () {
+  constructor (map) {
     super()
-    console.log('Wyszukiwanie lokalizacji')
+    this.map = map
   }
-
-  locate (map) {
+  locate () {
     console.log('Szukam')
-    map.locate({ setView: true, maxZoom: 16 })
+    this.map.locate({ setView: true, maxZoom: 16 })
     console.log('Znaleziono')
   }
 }
